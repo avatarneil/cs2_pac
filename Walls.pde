@@ -36,6 +36,7 @@ class Walls {
     // Otherwise, return some value that can never be a collision.
     // Input & Output are in pixel coordinates
     PVector collision(PVector fromPosition, PVector toPosition) {
+      return new PVector(0,0);
     }
 
     void render() {

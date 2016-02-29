@@ -10,6 +10,7 @@ class Pac {
 
     // return a copy of the current position
     PVector getPosition() {
+      return new PVector(0,0);
     }
 
     // set a new movement direction
@@ -18,6 +19,7 @@ class Pac {
 
     // Draw the Pac, as a circle
     void render() {
+      ellipse(position.x,position.y,dotRadius,dotRadius);
     }
 
     // If the given vector is off the screen, wrap it around to the other side
