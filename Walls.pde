@@ -40,6 +40,7 @@ class Walls {
     }
 
     void render() {
+      rect(dotToPixel(60),dotToPixel(60),3,3);
     }
 
 }

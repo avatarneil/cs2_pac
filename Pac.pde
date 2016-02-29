@@ -19,7 +19,8 @@ class Pac {
 
     // Draw the Pac, as a circle
     void render() {
-      ellipse(position.x,position.y,dotRadius,dotRadius);
+      fill(255,255,0);
+      ellipse(position.x,position.y,50,50);
     }
 
     // If the given vector is off the screen, wrap it around to the other side

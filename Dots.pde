@@ -1,11 +1,22 @@
 class Dots {
    private boolean[][] dots;
    private int count;
+   private int a;
+   private int b;
 
    // Create an initial board with every dot present
    Dots() {
-     dots = new boolean[30][30];
-     count = 30;
+     count=0;
+     a=0;
+     b=0;
+     dots = new boolean[boardWidth][boardHeight];
+     while (count < 30){
+       dots[a][] = true;
+       dots[][b] = true;
+       count++;
+       a++;
+       b++;
+     }
    }
 
    // remove any dots between the two positions
@@ -25,7 +36,7 @@ class Dots {
 
    // Draw the dots.  Use `dotToPixel`
    void render() {
-     dotToPixel(count);
+     ellipse(dotToPixel(30),dotToPixel(30),5,5);
    }
 
 }
