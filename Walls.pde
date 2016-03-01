@@ -40,7 +40,11 @@ class Walls {
     }
 
     void render() {
-      rect(dotToPixel(60),dotToPixel(60),3,3);
+      for (int i=0;i<boardHeight;i++){
+        for(int j=0;i<boardHeight;i++){
+          rect(dotToPixel(i),dotToPixel(j),12,50);
+        }
+      }
     }
 
 }
