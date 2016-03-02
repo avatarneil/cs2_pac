@@ -15,6 +15,7 @@ class Pac {
 
     // set a new movement direction
     void setDirection(Dir d) {
+      travelDirection = d;
     }
 
     // Draw the Pac, as a circle

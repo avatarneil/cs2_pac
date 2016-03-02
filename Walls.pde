@@ -41,8 +41,13 @@ class Walls {
 
     void render() {
       for (int i=0;i<boardHeight;i++){
-        for(int j=0;i<boardHeight;i++){
-          rect(dotToPixel(i),dotToPixel(j),12,50);
+        for(int j=0;j<boardHeight;j++){
+          if (vertical[i][j]==true){ 
+            rect(dotToPixel(i)+15,dotToPixel(j)+15,3,dotSpacing);
+          }
+          if (horizontal[i][j]==true){
+            rect(dotToPixel(i)+15,dotToPixel(j)+15,dotSpacing,3);
+          }
         }
       }
     }

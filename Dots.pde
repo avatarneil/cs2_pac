@@ -41,7 +41,8 @@ class Dots {
      fill(255,255,255);
      while (i<=30){
        while (j<=30){
-         ellipse(dotToPixel(i),dotToPixel(j),20,20);
+         noStroke();
+         ellipse(dotToPixel(i),dotToPixel(j),dotRadius,dotRadius);
          j++;
          println(j);
        }
