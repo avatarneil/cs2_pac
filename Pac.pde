@@ -34,6 +34,7 @@ class Pac {
 
     // reverse the movement direction
     private void reverseDirection() {
+      position.rotate(PI);
       
     }
 
@@ -41,6 +42,15 @@ class Pac {
     // If normal movement would hit a wall, find the position after bouncing off the wall.
     // The total distance travelled (before + after hitting the wall) should be the same.
     void updatePosition(Walls walls) {
+      if (travelDirection == Dir.EAST){
+        position.x = position.x + speed;
+      }else if (travelDirection == Dir.WEST){
+        position.x = position.x - speed;
+      }else if (travelDirection == Dir.NORTH){
+        position.y = position.y - speed;
+      }else if (travelDirection == Dir.SOUTH){
+        position.y = position.y + speed;
+      }
     }
 
 }

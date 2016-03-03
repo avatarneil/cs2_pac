@@ -38,4 +38,14 @@ void draw() {
     dots.render();
     pac.render();
     walls.render();
+    if (keyCode == UP){
+      pac.setDirection(Dir.NORTH);
+    }else if (keyCode == DOWN){
+      pac.setDirection(Dir.SOUTH);
+    }else if (keyCode == RIGHT){
+      pac.setDirection(Dir.EAST);
+    }else if (keyCode == LEFT){
+      pac.setDirection(Dir.WEST);
+    }
+    pac.updatePosition(walls);
 }
