@@ -28,10 +28,13 @@ class Pac {
     // Modify the given vector.
     // If this were public, we probably woudn't modify the vector in place like this.
     private void wrapPosition(PVector vec) {
+      vec.x = (vec.x + width) % width;
+      vec.y = (vec.y = width) % width;
     }
 
     // reverse the movement direction
     private void reverseDirection() {
+      
     }
 
     // Update the position, using the current speed & travel direction
