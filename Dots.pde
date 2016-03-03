@@ -28,7 +28,15 @@ class Dots {
    // Write a comment explaining what your version does
    // if the inputs are not in the same row or column.
    int remove(PVector fromPosition, PVector toPosition) {
-     return 5;
+      while (i <30){
+       while (j<30){
+         if (i.x == fromPosition-toPosition){
+         }
+       }
+       j=0;
+       i++;
+     }
+     i=0;
    }
 
       // return the number of dots remaining
