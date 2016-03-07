@@ -2,7 +2,7 @@ final int boardWidth = 30; // number of dots across
 final int boardHeight = 30; // number of dots down
 final int dotSpacing = 30; // pixels between dot centers
 final int dotRadius = 3; // pixels
-
+PVector getPos;
 Dots dots;
 Pac pac;
 Walls walls;
@@ -47,5 +47,7 @@ void draw() {
     }else if (keyCode == LEFT){
       pac.setDirection(Dir.WEST);
     }
+    getPos = pac.getPosition();
     pac.updatePosition(walls);
+    dots.remove(getPos,pac.getPosition());
 }

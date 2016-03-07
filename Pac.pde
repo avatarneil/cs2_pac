@@ -10,7 +10,7 @@ class Pac {
 
     // return a copy of the current position
     PVector getPosition() {
-      return new PVector(0,0);
+      return position.copy();
     }
 
     // set a new movement direction
