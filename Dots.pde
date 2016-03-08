@@ -33,13 +33,13 @@ class Dots {
     while (i <30) {
       j=0;
       while (j<30) {
-        if (fromPosition.x == toPosition.x) {
-          if (dotToPixel(i) > fromPosition.y && dotToPixel(i) < toPosition.y) {
+        if (fromPosition.y == toPosition.y) {
+          if (dotToPixel(i) >= fromPosition.x && dotToPixel(i) <= toPosition.x) {
             dots[i][j] = false;
             count--;
           }
-        } else if (fromPosition.y == toPosition.y) {
-          if (dotToPixel(j)<toPosition.x && dotToPixel(j) > fromPosition.x) {
+        } else if (fromPosition.x == toPosition.x) {
+          if (dotToPixel(j)<= toPosition.y && dotToPixel(j) >= fromPosition.y) {
             dots[i][j] = false;
             count--;
           }
@@ -50,7 +50,6 @@ class Dots {
       i++;
     }
     i=0;
-    println(count);
   }
 
   // return the number of dots remaining
