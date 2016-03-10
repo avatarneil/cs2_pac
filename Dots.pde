@@ -34,12 +34,12 @@ class Dots {
       j=0;
       while (j<30) {
         if (fromPosition.y == toPosition.y) {
-          if (dotToPixel(i) >= fromPosition.x && dotToPixel(i) <= toPosition.x && (dotToPixel(j)<=fromPosition.y + 50 &&  dotToPixel(j)>=fromPosition.y-50) /*need to add j thing here*/ ) {
+          if ((dotToPixel(i) >= fromPosition.x && dotToPixel(i) <= toPosition.x || dotToPixel(i) <=fromPosition.x && dotToPixel(i)>=toPosition.x) && (dotToPixel(j)<=fromPosition.y + 25 &&  dotToPixel(j)>=fromPosition.y-25) /*need to add j thing here*/ ) {
             dots[i][j] = false;
             count--;
           }
         } else if (fromPosition.x == toPosition.x) {
-          if (dotToPixel(j)<= toPosition.y && dotToPixel(j) >= fromPosition.y && (dotToPixel(i)<=fromPosition.x+50 && dotToPixel(i)>=fromPosition.x-50)/*need to add j thing here*/) {
+          if ((dotToPixel(j)<= toPosition.y && dotToPixel(j) >= fromPosition.y || dotToPixel(j)>=toPosition.y && dotToPixel (j) <= fromPosition.y) && (dotToPixel(i)<=fromPosition.x+25 && dotToPixel(i)>=fromPosition.x-25)/*need to add j thing here*/) {
             dots[i][j] = false;
             count--;
           }
