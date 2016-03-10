@@ -50,4 +50,5 @@ void draw() {
     getPos = pac.getPosition();
     pac.updatePosition(walls);
     dots.remove(getPos,pac.getPosition());
+    println(dots.remaining());
 }
