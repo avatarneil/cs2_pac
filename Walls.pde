@@ -36,30 +36,39 @@ class Walls {
   // If there is a wall between the two given positions, return the point of collision.
   // Otherwise, return some value that can never be a collision.
   // Input & Output are in pixel coordinates
-  void collision(PVector fromPosition, PVector toPosition) {
+  boolean collision(PVector fromPosition, PVector toPosition) {
     while (i <30) {
       j=0;
       while (j<30) {
         if (fromPosition.y==toPosition.y) {
           if ((i >= pixelToDot(fromPosition.x) && i <= pixelToDot(toPosition.x) || i <= pixelToDot(fromPosition.x) && i >= pixelToDot(toPosition.x)) && j <= pixelToDot(fromPosition.y) &&  j>= pixelToDot(fromPosition.y)) {
-            if (vertical[i][j]){
-              println(5);
+            if (vertical[i][j]) {
+              return true;
+            } else {
+              return false;
             }
+          } else {
+            return false;
           }
         }
         if (fromPosition.x == toPosition.x) {
           if ((j<= pixelToDot(toPosition.y) && j >= pixelToDot(fromPosition.y) ||j >= pixelToDot(toPosition.y) && j <= pixelToDot(fromPosition.y)) && (i<=pixelToDot (fromPosition.x) && i>=pixelToDot(fromPosition.x))) {
-            if (horizontal[i][j]){
-              println(4);;
+            if (horizontal[i][j]) {
+              return true;
+            }else{
+              return false;
             }
           }
-        }
+        }else{
+              return false;
+            }
         j++;
       }
       j=0;
       i++;
     }
     i=0;
+    return false;
   }
 
   void render() {
