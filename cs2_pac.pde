@@ -50,5 +50,8 @@ void draw() {
     getPos = pac.getPosition();
     pac.updatePosition(walls);
     dots.remove(getPos,pac.getPosition());
-    println(dots.remaining());
+    //println(dots.remaining());
+    if(walls.collision(getPos,pac.getPosition())=="stop"){
+      
+    }
 }
