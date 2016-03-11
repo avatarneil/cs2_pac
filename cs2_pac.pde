@@ -15,45 +15,46 @@ Walls walls;
 
 // dotToPixel gives the pixel coordinate in the *center* of the corresponding box
 float dotToPixel(int x) {
-    return (0.5 + x) * dotSpacing;
+  return (0.5 + x) * dotSpacing;
 }
 
 // pixelToDot finds the box in which the pixel is contained
 int pixelToDot(float x) {
-    if (x > boardWidth * dotSpacing) {
-        println(x);
-    }
-    return floor(x / dotSpacing);
+  if (x > boardWidth * dotSpacing) {
+    println(x);
+  }
+  return floor(x / dotSpacing);
 }
 
 void setup() {
-    size(900,900);
-    dots = new Dots();
-    pac = new Pac();
-    walls = new Walls();
+  size(900, 900);
+  dots = new Dots();
+  pac = new Pac();
+  walls = new Walls();
 }
 
 void draw() {
-    clear();
-    dots.render();
-    pac.render();
-    walls.render();
-    if (keyCode == UP){
+  clear();
+  dots.render();
+  pac.render();
+  walls.render();
+  if (keyPressed) {
+    if (keyCode == UP) {
       pac.setDirection(Dir.NORTH);
-    }else if (keyCode == DOWN){
+    } else if (keyCode == DOWN) {
       pac.setDirection(Dir.SOUTH);
-    }else if (keyCode == RIGHT){
+    } else if (keyCode == RIGHT) {
       pac.setDirection(Dir.EAST);
-    }else if (keyCode == LEFT){
+    } else if (keyCode == LEFT) {
       pac.setDirection(Dir.WEST);
     }
-    getPos = pac.getPosition();
-    pac.updatePosition(walls);
-    dots.remove(getPos,pac.getPosition());
-    //println(dots.remaining());
-    if(walls.collision(getPos,pac.getPosition())){
-      println(4);
-    }else{
-      println(3);
-    }
+  }
+  getPos = pac.getPosition();
+  pac.updatePosition(walls);
+  dots.remove(getPos, pac.getPosition());
+  //println(dots.remaining());
+  if (walls.collision(getPos, pac.getPosition())) {
+    pac.setDirection(Dir.STOP);
+  } else {
+  }
 }

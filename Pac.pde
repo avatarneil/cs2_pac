@@ -50,6 +50,9 @@ class Pac {
         position.y = position.y - speed;
       }else if (travelDirection == Dir.SOUTH){
         position.y = position.y + speed;
+      }else if (travelDirection == Dir.STOP){
+        position.x = position.x;
+        position.y = position.y;
       }
     }
 
