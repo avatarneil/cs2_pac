@@ -55,6 +55,5 @@ void draw() {
   //println(dots.remaining());
   if (walls.collision(getPos, pac.getPosition())) {
     pac.setDirection(Dir.STOP);
-  } else {
   }
 }
