@@ -29,33 +29,13 @@ class Dots {
   // Write a comment explaining what your version does
   // if the inputs are not in the same row or column.
   void remove(PVector fromPosition, PVector toPosition) {
-    i=0;
-    while (i <30) {
-      j=0;
-      while (j<30) {
-        if (fromPosition.y == toPosition.y) {
-          if ((dotToPixel(i) >= fromPosition.x && dotToPixel(i) <= toPosition.x || dotToPixel(i) <=fromPosition.x && dotToPixel(i)>=toPosition.x) && (dotToPixel(j)<=fromPosition.y + 10 &&  dotToPixel(j)>=fromPosition.y-10) /*need to add j thing here*/ ) {
-            if (dots[i][j]){
-              dots[i][j] = false;
-              count--;
-            } else{
-            }
-          }
-        } else if (fromPosition.x == toPosition.x) {
-          if ((dotToPixel(j)<= toPosition.y && dotToPixel(j) >= fromPosition.y || dotToPixel(j)>=toPosition.y && dotToPixel (j) <= fromPosition.y) && (dotToPixel(i)<=fromPosition.x+10 && dotToPixel(i)>=fromPosition.x-10)/*need to add j thing here*/) {
-            if (dots[i][j]){
-              dots[i][j] = false;
-              count--;
-            } else{
-            }
-          }
-        }
-        j++;
-      }
-      j=0;
-      i++;
+    if (dots[pixelToDot(fromPosition.x)][pixelToDot(fromPosition.y)]){
+      dots[pixelToDot(fromPosition.x)][pixelToDot(fromPosition.y)]=false;
+      count--;
+    }else if (dots[pixelToDot(toPosition.x)][pixelToDot(toPosition.y)]){
+      dots[pixelToDot(toPosition.x)][pixelToDot(toPosition.y)]=false;
+      count--;
     }
-    i=0;
   }
 
   // return the number of dots remaining
