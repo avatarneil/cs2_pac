@@ -37,43 +37,18 @@ class Walls {
   // Otherwise, return some value that can never be a collision.
   // Input & Output are in pixel coordinates
   boolean collision(PVector fromPosition, PVector toPosition) {
-    while (i <30) {
-      j=0;
-      while (j<30) {
-        if (fromPosition.y==toPosition.y) {
-//          println(pixelToDot(fromPosition.x));
-  //        println(i >= pixelToDot(fromPosition.x) && i<= pixelToDot(toPosition.x));
-          if (((i >= pixelToDot(fromPosition.x) && i<= pixelToDot(toPosition.x)) || (i <= pixelToDot(fromPosition.x) && i >= pixelToDot(toPosition.x))) && j == pixelToDot(fromPosition.y)) {
-            println(4);
-            if (vertical[i][j]) {
-              println(5);
-              return true;
-            } else {
-              return false;
-            }
-          } else {
-           return false;
-          }
-        }
-        if (fromPosition.x == toPosition.x) {
-          if ((j>= pixelToDot(toPosition.y) && j <= pixelToDot(fromPosition.y) ||j <= pixelToDot(toPosition.y) && j >= pixelToDot(fromPosition.y)) && i==pixelToDot (fromPosition.x)) {
-            if (horizontal[i][j]) {
-              return true;
-            }else{
-              return false;
-            }
-          }
-        }else{
-              return false;
-            }
-        j++;
-      }
-      j=0;
-      i++;
+    if (vertical[pixelToDot(fromPosition.x)][pixelToDot(fromPosition.y)]){
+      return true;
+    }else if (vertical[pixelToDot(toPosition.x)][pixelToDot(toPosition.y)]){
+      return true;
+    }else if (horizontal[pixelToDot(fromPosition.x)][pixelToDot(fromPosition.y)]){
+      return true;
+    }else if (horizontal[pixelToDot(toPosition.x)][pixelToDot(toPosition.y)]){
+      return true;
+    }else{
+      return false;
     }
-    i=0;
-    return false;
-  }
+    }
 
   void render() {
     for (int i=0; i<boardHeight; i++) {

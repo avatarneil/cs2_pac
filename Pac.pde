@@ -21,7 +21,7 @@ class Pac {
     // Draw the Pac, as a circle
     void render() {
       fill(255,255,0);
-      ellipse(position.x,position.y,50,50);
+      ellipse(position.x,position.y,20,20);
     }
 
     // If the given vector is off the screen, wrap it around to the other side
@@ -29,7 +29,7 @@ class Pac {
     // If this were public, we probably woudn't modify the vector in place like this.
     private void wrapPosition(PVector vec) {
       vec.x = (vec.x + width) % width;
-      vec.y = (vec.y = width) % width;
+      vec.y = (vec.y + width) % width;
     }
 
     // reverse the movement direction
@@ -53,6 +53,15 @@ class Pac {
       }else if (travelDirection == Dir.STOP){
         position.x = position.x;
         position.y = position.y;
+      }
+      if (position.x>=900){
+        wrapPosition(position);
+      }else if (position.x<=0){
+        wrapPosition(position);
+      } else if (position.y >=900){
+        wrapPosition(position);
+      } else if (position.y <=0){
+        wrapPosition(position);
       }
     }
 
