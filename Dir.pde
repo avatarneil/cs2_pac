@@ -1,3 +1,3 @@
 enum Dir {
- NORTH, SOUTH, EAST, WEST, STOP
+  NORTH, SOUTH, EAST, WEST, STOP
 }

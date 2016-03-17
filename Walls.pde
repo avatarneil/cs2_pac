@@ -37,18 +37,18 @@ class Walls {
   // Otherwise, return some value that can never be a collision.
   // Input & Output are in pixel coordinates
   boolean collision(PVector fromPosition, PVector toPosition) {
-    if (vertical[pixelToDot(fromPosition.x)][pixelToDot(fromPosition.y)]){
+    if (vertical[pixelToDot(fromPosition.x)][pixelToDot(fromPosition.y)]) {
       return true;
-    }else if (vertical[pixelToDot(toPosition.x)][pixelToDot(toPosition.y)]){
+    } else if (vertical[pixelToDot(toPosition.x)][pixelToDot(toPosition.y)]) {
       return true;
-    }else if (horizontal[pixelToDot(fromPosition.x)][pixelToDot(fromPosition.y)]){
+    } else if (horizontal[pixelToDot(fromPosition.x)][pixelToDot(fromPosition.y)]) {
       return true;
-    }else if (horizontal[pixelToDot(toPosition.x)][pixelToDot(toPosition.y)]){
+    } else if (horizontal[pixelToDot(toPosition.x)][pixelToDot(toPosition.y)]) {
       return true;
-    }else{
+    } else {
       return false;
     }
-    }
+  }
 
   void render() {
     for (int i=0; i<boardHeight; i++) {

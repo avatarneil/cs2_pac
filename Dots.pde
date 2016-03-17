@@ -29,10 +29,10 @@ class Dots {
   // Write a comment explaining what your version does
   // if the inputs are not in the same row or column.
   void remove(PVector fromPosition, PVector toPosition) {
-    if (dots[pixelToDot(fromPosition.x)][pixelToDot(fromPosition.y)]){
+    if (dots[pixelToDot(fromPosition.x)][pixelToDot(fromPosition.y)]) {
       dots[pixelToDot(fromPosition.x)][pixelToDot(fromPosition.y)]=false;
       count--;
-    }else if (dots[pixelToDot(toPosition.x)][pixelToDot(toPosition.y)]){
+    } else if (dots[pixelToDot(toPosition.x)][pixelToDot(toPosition.y)]) {
       dots[pixelToDot(toPosition.x)][pixelToDot(toPosition.y)]=false;
       count--;
     }
